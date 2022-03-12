@@ -1,0 +1,44 @@
+<div class="x_title">
+  <h2><%= t('messages.listing',model: @subjects.model_name.human(count: 2)) %></h2>
+  <div class="clearfix"></div>
+  </div>
+  <div class="x_content">
+    <table class="table">
+      <thead>
+        <tr>
+
+          <th><%= translate_attribute(@subjects, :description)%></th>
+          <th>
+            <%= link_to new_admins_backoffice_subject_path, class:"btn btn-success btn-circle" do %>
+              <i class="fa fa-plus"></i>
+            <% end %>    
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @subjects.each do |subject| %>
+          <tr>
+
+            <td><%= subject.description %></td>
+            <td style="width: 110px">
+              <%= link_to edit_admins_backoffice_subject_path(subject), class:"btn btn-primary btn-circle" do %>
+                <i class="fa fa-edit"></i>
+              <% end %>
+              <%= link_to admins_backoffice_subject_path(subject), method: :delete, 
+                class:"btn btn-danger btn-circle", 
+                data: { confirm: t('messages.confirm', item: subject.description.truncate(30) )} do %>
+                <i class="fa fa-minus"></i>
+              <% end %>     
+
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    
+  <%= paginate @subjects %>
+
+  </div>
+  </div>
+                
+</div>
