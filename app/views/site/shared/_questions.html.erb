@@ -27,9 +27,9 @@
                 </label>
               </div>
             </li>
-          <% end %>
+          <% end %><br>
           <li style="list-style:none;">
-            <%= form.submit "Responder", class:"btn btn-default" %>
+            <%= form.submit "Responder", class:"btn btn-default", id: "submit_#{question.id}" %>
           </li>
         </ul>
       </div>
