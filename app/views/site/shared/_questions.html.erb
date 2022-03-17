@@ -1,22 +1,16 @@
    
    
 <div class="jumbotron">
-
-  <% unless params[:term] %>
-    <h3> Últimas perguntas cadastradas </h3>
-  <% else %>
-    <h3> <%= "Resultados  para o termo \"#{params[:term]}\"..."%></h3>
-  <% end %>
-
+  <h3> <%= msg_jumbotron %> </h3>
 </div>
-
+<br>
 <% @questions.each do |question| %>
   <%= form_with url: site_answer_path do |form| %>
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">
           <span class="label label-info" style="margin-right: 10px;">
-            <%= link_to question.subject.description, site_search_subject_path(question.subject_id) %>
+            <%= link_to question.subject.description, site_search_subject_path(question.subject_id, question.subject.description) %>
           </sapn>
           <%= question.description %>
         </h3>
