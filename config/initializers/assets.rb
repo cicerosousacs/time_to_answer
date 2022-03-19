@@ -16,13 +16,13 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w( admins_backoffice.js admins_backoffice.css
                                                   users_backoffice.js users_backoffice.css
                                                   admin_devise.js admin_devise.css
-                                                  site.js site.css )
+                                                  site.js site.css img.jpg)
 # /lib/assets
 Rails.application.config.assets.precompile += %w( sb-admin-2.js sb-admin-2.css
                                                   custom.js custom.css
                                                   scripts.js styles.css
                                                   ie10-viewport-bug-workaround.js ie10-viewport-bug-workaround.css
-                                                  navbar.css )
+                                                  navbar.css img.jpg )
 # /vendor/assets
 Rails.application.config.assets.precompile += %w( jquery-2.2.3/dist/jquery.js 
                                                 bootstrap-5.1.3/bootstrap.bundle.min.js)

@@ -18,8 +18,10 @@ Rails.application.routes.draw do
     resources :subjects # Assuntos e Áreas
     resources :questions # Perguntas
   end
+
   devise_for :users
-  devise_for :admins
+  devise_for :admins, skip: [:registrations]
+
   get 'welcome/index'
   get 'inicio', to: 'site/welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
