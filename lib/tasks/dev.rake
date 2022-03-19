@@ -79,6 +79,15 @@ task add_answers_and_questions: :environment do
   end
 end
 
+desc "Contandos Questões por Assunto"
+task reset_subjects_counter: :environment do
+  show_spinner("Contandos Questões por Assunto...") do
+    Subject.find_each do |subject|
+      Subject.reset_counters(subject.id, :questions)
+    end
+  end
+end
+
 
 private
 
