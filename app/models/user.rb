@@ -4,7 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  # METODO PARA JUNTAR CAMPOS
+  #VALIDAÇÔES
+  validates :first_name, presence: true
+
+
+
+  # METODO PARA JUNTAR CAMPOS - ATRIBUTO VIRTUAL
   def user_name
     [self.first_name, self.last_name].join(" ")
   end
